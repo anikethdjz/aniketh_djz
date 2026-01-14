@@ -1,8 +1,14 @@
 import { motion } from 'framer-motion';
-import { useState } from 'react';
-import { Mail, Github, Linkedin, Send, CheckCircle, Phone } from 'lucide-react';
+import { useState, useRef } from 'react';
+import { Mail, Github, Linkedin, Send, CheckCircle, Phone, AlertCircle } from 'lucide-react';
+import emailjs from '@emailjs/browser';
+
+const EMAILJS_SERVICE_ID = 'service_drr6noi';
+const EMAILJS_TEMPLATE_ID = 'template_q4a4pgp';
+const EMAILJS_PUBLIC_KEY = 'ViH1_MWayaEWmwLcm';
 
 const ContactSection = () => {
+  const formRef = useRef<HTMLFormElement>(null);
   const [formState, setFormState] = useState({
     name: '',
     email: '',
@@ -10,19 +16,35 @@ const ContactSection = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
     
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 1500));
-    
-    setIsSubmitting(false);
-    setIsSubmitted(true);
-    setFormState({ name: '', email: '', message: '' });
-    
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      await emailjs.send(
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
+        {
+          from_name: formState.name,
+          from_email: formState.email,
+          message: formState.message,
+          to_name: 'Aniketh S',
+        },
+        EMAILJS_PUBLIC_KEY
+      );
+      
+      setIsSubmitted(true);
+      setFormState({ name: '', email: '', message: '' });
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (err) {
+      console.error('EmailJS error:', err);
+      setError('Failed to send message. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const socialLinks = [
@@ -154,6 +176,17 @@ const ContactSection = () => {
                   </>
                 )}
               </motion.button>
+
+              {error && (
+                <motion.div
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className="flex items-center gap-2 text-red-400 text-sm mt-2"
+                >
+                  <AlertCircle className="w-4 h-4" />
+                  {error}
+                </motion.div>
+              )}
             </form>
           </motion.div>
 
