@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { ArrowDown, Download, Mail, Rocket } from 'lucide-react';
+import profileImage from '@/assets/profile.png';
 
 const roles = [
   'Computer Science Engineer',
@@ -48,6 +49,23 @@ const HeroSection = () => {
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[128px] animate-pulse-glow" />
 
       <div className="relative z-10 text-center max-w-4xl mx-auto">
+        {/* Profile Image */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8"
+        >
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-60 animate-pulse-glow" />
+          <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/50 shadow-lg shadow-primary/30">
+            <img 
+              src={profileImage} 
+              alt="Aniketh S" 
+              className="w-full h-full object-cover"
+            />
+          </div>
+        </motion.div>
+
         {/* Animated name */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
