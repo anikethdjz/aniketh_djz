@@ -54,7 +54,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-10"
+          className="relative w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto mb-8"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-60 animate-pulse-glow" />
           <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/50 shadow-lg shadow-primary/30">
@@ -71,7 +71,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-6xl md:text-8xl lg:text-9xl font-bold mb-6"
+          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
         >
           <span className="inline-flex">
             {nameLetters.map((letter, index) => (
