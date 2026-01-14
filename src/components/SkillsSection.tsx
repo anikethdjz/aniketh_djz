@@ -63,11 +63,11 @@ const SkillsSection = () => {
     : skills.filter(s => s.category === activeFilter);
 
   return (
-    <section id="skills" className="relative py-24 px-4">
+    <section id="skills" className="relative py-24 px-4 md:px-8 lg:px-12">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="w-full relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -75,10 +75,10 @@ const SkillsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-12"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
             Tech <span className="text-gradient">Arsenal</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Tools and technologies I wield to build production-grade systems
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ const SkillsSection = () => {
               key={category}
               onClick={() => setActiveFilter(category)}
               className={`
-                px-5 py-2 rounded-full text-sm font-medium transition-all duration-300
+                px-7 py-3 rounded-full text-base md:text-lg font-semibold transition-all duration-300
                 ${activeFilter === category 
                   ? 'bg-primary text-primary-foreground glow-cyan' 
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -113,7 +113,7 @@ const SkillsSection = () => {
         {/* Skills grid */}
         <motion.div
           layout
-          className="flex flex-wrap justify-center gap-4"
+          className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto"
         >
           {filteredSkills.map((skill, index) => {
             const colors = colorVariants[skill.color as keyof typeof colorVariants];
@@ -130,7 +130,7 @@ const SkillsSection = () => {
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
                 className={`
-                  relative px-5 py-3 rounded-xl cursor-default
+                  relative px-7 py-4 md:px-8 md:py-5 rounded-xl cursor-default
                   ${colors.bg} ${colors.border} border
                   transition-all duration-300
                   hover:shadow-lg ${colors.glow}
@@ -141,7 +141,7 @@ const SkillsSection = () => {
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <span className={`font-medium ${colors.text}`}>
+                <span className={`font-semibold text-base md:text-lg ${colors.text}`}>
                   {skill.name}
                 </span>
 

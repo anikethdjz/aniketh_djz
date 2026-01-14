@@ -43,18 +43,18 @@ const HeroSection = () => {
   const nameLetters = 'Aniketh S'.split('');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-12 overflow-hidden">
       {/* Gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[128px] animate-pulse-glow" />
 
-      <div className="relative z-10 text-center max-w-4xl mx-auto">
+      <div className="relative z-10 text-center w-full">
         {/* Profile Image */}
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative w-32 h-32 md:w-40 md:h-40 mx-auto mb-8"
+          className="relative w-40 h-40 md:w-56 md:h-56 lg:w-64 lg:h-64 mx-auto mb-10"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-60 animate-pulse-glow" />
           <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/50 shadow-lg shadow-primary/30">
@@ -112,7 +112,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto mb-12"
+          className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground max-w-4xl mx-auto mb-12 text-center"
         >
           I build{' '}
           <span className="text-primary font-semibold">production-grade full-stack & AI systems</span>
@@ -127,15 +127,15 @@ const HeroSection = () => {
           className="flex flex-wrap gap-4 justify-center"
         >
           <MagneticButton href="#projects" variant="primary">
-            <Rocket className="w-4 h-4 mr-2" />
+            <Rocket className="w-5 h-5 md:w-6 md:h-6 mr-2" />
             View Projects
           </MagneticButton>
           <MagneticButton href="/resume.pdf" variant="secondary" download>
-            <Download className="w-4 h-4 mr-2" />
+            <Download className="w-5 h-5 md:w-6 md:h-6 mr-2" />
             Download Resume
           </MagneticButton>
           <MagneticButton href="#contact" variant="outline">
-            <Mail className="w-4 h-4 mr-2" />
+            <Mail className="w-5 h-5 md:w-6 md:h-6 mr-2" />
             Contact Me
           </MagneticButton>
         </motion.div>
@@ -169,7 +169,7 @@ interface MagneticButtonProps {
 }
 
 const MagneticButton = ({ children, href, variant, download }: MagneticButtonProps) => {
-  const baseClasses = "relative inline-flex items-center px-6 py-3 rounded-lg font-medium text-sm transition-all duration-300 group overflow-hidden";
+  const baseClasses = "relative inline-flex items-center px-8 py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 group overflow-hidden";
   
   const variants = {
     primary: "bg-primary text-primary-foreground hover:shadow-lg hover:shadow-primary/30 glow-cyan",

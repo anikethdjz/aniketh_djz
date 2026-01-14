@@ -75,8 +75,8 @@ const ContactSection = () => {
   ];
 
   return (
-    <section id="contact" className="relative py-24 px-4">
-      <div className="max-w-4xl mx-auto">
+    <section id="contact" className="relative py-24 px-4 md:px-8 lg:px-12">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -84,15 +84,15 @@ const ContactSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
             Let's <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto">
             Let's build something impactful together.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="grid grid-cols-1 gap-14 max-w-4xl mx-auto">
           {/* Contact form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -100,9 +100,9 @@ const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-8">
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">
+                <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
                   Name
                 </label>
                 <input
@@ -110,13 +110,13 @@ const ContactSection = () => {
                   required
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                  className="w-full px-6 py-4 text-base md:text-lg rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">
+                <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
                   Email
                 </label>
                 <input
@@ -124,21 +124,21 @@ const ContactSection = () => {
                   required
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                  className="w-full px-6 py-4 text-base md:text-lg rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div>
-                <label className="text-sm text-muted-foreground mb-2 block">
+                <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
                   Message
                 </label>
                 <textarea
                   required
-                  rows={4}
+                  rows={5}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent resize-none"
+                  className="w-full px-6 py-4 text-base md:text-lg rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent resize-none"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
@@ -147,7 +147,7 @@ const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
                 className={`
-                  w-full py-4 rounded-xl font-medium flex items-center justify-center gap-2
+                  w-full py-5 md:py-6 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-3
                   transition-all duration-300
                   ${isSubmitted 
                     ? 'bg-accent text-accent-foreground' 
@@ -160,18 +160,18 @@ const ContactSection = () => {
               >
                 {isSubmitted ? (
                   <>
-                    <CheckCircle className="w-5 h-5" />
+                    <CheckCircle className="w-6 h-6 md:w-7 md:h-7" />
                     Message Sent!
                   </>
                 ) : isSubmitting ? (
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    className="w-5 h-5 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
+                    className="w-6 h-6 md:w-7 md:h-7 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
                   />
                 ) : (
                   <>
-                    <Send className="w-5 h-5" />
+                    <Send className="w-6 h-6 md:w-7 md:h-7" />
                     Send Message
                   </>
                 )}
@@ -190,7 +190,7 @@ const ContactSection = () => {
             </form>
           </motion.div>
 
-          {/* Contact info */}
+          {/* Contact info - positioned under Send Message */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -198,31 +198,31 @@ const ContactSection = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <div className="glass rounded-2xl p-8">
-              <h3 className="font-display text-2xl font-semibold mb-6">
+            <div className="glass rounded-2xl p-10 md:p-12">
+              <h3 className="font-display text-3xl md:text-4xl font-semibold mb-8">
                 Get in Touch
               </h3>
 
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <Mail className="w-5 h-5 text-primary" />
-                  <a href="mailto:anikethsshaji@gmail.com" className="hover:text-foreground transition-colors">
+              <div className="space-y-6 mb-10">
+                <div className="flex items-center gap-4 text-muted-foreground">
+                  <Mail className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+                  <a href="mailto:anikethsshaji@gmail.com" className="text-base md:text-lg hover:text-foreground transition-colors">
                     anikethsshaji@gmail.com
                   </a>
                 </div>
-                <div className="flex items-center gap-3 text-muted-foreground">
-                  <Phone className="w-5 h-5 text-primary" />
-                  <a href="tel:+919447073475" className="hover:text-foreground transition-colors">
+                <div className="flex items-center gap-4 text-muted-foreground">
+                  <Phone className="w-6 h-6 md:w-7 md:h-7 text-primary" />
+                  <a href="tel:+919447073475" className="text-base md:text-lg hover:text-foreground transition-colors">
                     +91 9447073475
                   </a>
                 </div>
               </div>
 
-              <div className="border-t border-border pt-6">
-                <p className="text-sm text-muted-foreground mb-4">
+              <div className="border-t border-border pt-8">
+                <p className="text-base md:text-lg text-muted-foreground mb-6 font-medium">
                   Connect with me
                 </p>
-                <div className="flex gap-3">
+                <div className="flex gap-4">
                   {socialLinks.map((link) => {
                     const Icon = link.icon;
                     return (
@@ -231,11 +231,11 @@ const ContactSection = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-3 rounded-xl bg-muted/50 text-muted-foreground ${link.color} transition-all duration-300 hover:bg-muted`}
+                        className={`p-4 md:p-5 rounded-xl bg-muted/50 text-muted-foreground ${link.color} transition-all duration-300 hover:bg-muted`}
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <Icon className="w-5 h-5" />
+                        <Icon className="w-6 h-6 md:w-7 md:h-7" />
                       </motion.a>
                     );
                   })}
@@ -249,7 +249,7 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-6 text-center text-sm text-muted-foreground"
+              className="mt-8 text-center text-base md:text-lg text-muted-foreground"
             >
               📍 Palakkad, Kerala, India • Open to remote opportunities
             </motion.div>

@@ -73,7 +73,7 @@
   }
 
   body {
-    @apply bg-background text-foreground antialiased;
+    @apply bg-background text-foreground antialiased text-base md:text-lg;
     font-family: 'Inter', system-ui, sans-serif;
   }
 

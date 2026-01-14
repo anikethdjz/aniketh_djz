@@ -3,8 +3,8 @@ import { Heart } from 'lucide-react';
 
 const Footer = () => {
   return (
-    <footer className="relative py-12 px-4 border-t border-border/50">
-      <div className="max-w-6xl mx-auto">
+    <footer className="relative py-12 px-4 md:px-8 lg:px-12 border-t border-border/50">
+      <div className="w-full">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
           <motion.p
             initial={{ opacity: 0 }}

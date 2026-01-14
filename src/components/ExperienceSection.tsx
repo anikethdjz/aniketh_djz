@@ -28,11 +28,11 @@ const certifications = [
 
 const ExperienceSection = () => {
   return (
-    <section id="experience" className="relative py-24 px-4">
+    <section id="experience" className="relative py-24 px-4 md:px-8 lg:px-12">
       {/* Background accent */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-secondary/5 to-transparent pointer-events-none" />
 
-      <div className="max-w-6xl mx-auto relative">
+      <div className="w-full relative">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -40,15 +40,15 @@ const ExperienceSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
             Learning <span className="text-gradient-cyan">Journey</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Building a strong foundation through coursework and continuous learning
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <div className="space-y-12 max-w-4xl mx-auto">
           {/* Coursework */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -56,11 +56,11 @@ const ExperienceSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-primary/20">
-                <BookOpen className="w-5 h-5 text-primary" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-3 rounded-lg bg-primary/20">
+                <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-primary" />
               </div>
-              <h3 className="font-display text-2xl font-semibold">Technical Coursework</h3>
+              <h3 className="font-display text-3xl md:text-4xl font-semibold">Technical Coursework</h3>
             </div>
 
             <div className="relative">
@@ -85,8 +85,8 @@ const ExperienceSection = () => {
                       <div className="w-2 h-2 rounded-full bg-primary" />
                     </motion.div>
 
-                    <div className="glass px-4 py-3 rounded-lg flex-1 group-hover:border-primary/30 transition-colors">
-                      <span className="text-sm font-medium">{course}</span>
+                    <div className="glass px-5 py-4 rounded-lg flex-1 group-hover:border-primary/30 transition-colors">
+                      <span className="text-lg md:text-xl font-semibold">{course}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -94,18 +94,18 @@ const ExperienceSection = () => {
             </div>
           </motion.div>
 
-          {/* Certifications */}
+          {/* Certifications - placed under Technical Coursework */}
           <motion.div
             initial={{ opacity: 0, x: 30 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-3 mb-6">
-              <div className="p-2 rounded-lg bg-accent/20">
-                <Award className="w-5 h-5 text-accent" />
+            <div className="flex items-center gap-4 mb-8">
+              <div className="p-3 rounded-lg bg-accent/20">
+                <Award className="w-7 h-7 md:w-8 md:h-8 text-accent" />
               </div>
-              <h3 className="font-display text-2xl font-semibold">Certifications</h3>
+              <h3 className="font-display text-3xl md:text-4xl font-semibold">Certifications</h3>
             </div>
 
             <div className="space-y-4">
@@ -116,18 +116,18 @@ const ExperienceSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="glass rounded-xl p-6 hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group"
+                  className="glass rounded-xl p-7 md:p-8 hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <h4 className="font-semibold text-lg group-hover:text-accent transition-colors">
+                      <h4 className="font-semibold text-xl md:text-2xl group-hover:text-accent transition-colors">
                         {cert.title}
                       </h4>
-                      <p className="text-sm text-muted-foreground mt-1">
+                      <p className="text-base md:text-lg text-muted-foreground mt-2">
                         {cert.issuer}
                       </p>
                     </div>
-                    <span className="text-xs px-2 py-1 rounded-full bg-accent/20 text-accent">
+                    <span className="text-sm md:text-base px-3 py-1.5 rounded-full bg-accent/20 text-accent font-medium">
                       {cert.year}
                     </span>
                   </div>
@@ -143,15 +143,15 @@ const ExperienceSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 gradient-border rounded-2xl"
             >
-              <div className="glass-strong rounded-2xl p-6">
-                <h4 className="font-display text-xl font-semibold mb-3 text-gradient">
+              <div className="glass-strong rounded-2xl p-8 md:p-10">
+                <h4 className="font-display text-2xl md:text-3xl font-semibold mb-4 text-gradient">
                   Hackathon Builder
                 </h4>
-                <p className="text-muted-foreground text-sm">
+                <p className="text-muted-foreground text-base md:text-lg">
                   Built 4+ production-grade applications in competitive hackathons including 
-                  <span className="text-foreground font-medium"> Google Solution Challenge 2025</span>, 
-                  <span className="text-foreground font-medium"> Smart India Hackathon 2025</span>, and 
-                  <span className="text-foreground font-medium"> Hack For Earth 2025</span>. 
+                  <span className="text-foreground font-semibold"> Google Solution Challenge 2025</span>, 
+                  <span className="text-foreground font-semibold"> Smart India Hackathon 2025</span>, and 
+                  <span className="text-foreground font-semibold"> Hack For Earth 2025</span>. 
                   Proven ability to rapidly prototype and ship under pressure.
                 </p>
               </div>

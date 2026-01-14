@@ -84,8 +84,8 @@ const ProjectsSection = () => {
   const [selectedProject, setSelectedProject] = useState<typeof projects[0] | null>(null);
 
   return (
-    <section id="projects" className="relative py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="projects" className="relative py-24 px-4 md:px-8 lg:px-12">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -93,15 +93,15 @@ const ProjectsSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Production-grade applications built for hackathons and real-world impact
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
           {projects.map((project, index) => {
             const colors = colorVariants[project.color as keyof typeof colorVariants];
 
@@ -115,7 +115,7 @@ const ProjectsSection = () => {
                 onClick={() => setSelectedProject(project)}
                 className={`
                   group relative cursor-pointer
-                  glass rounded-2xl p-6
+                  glass rounded-2xl p-8 md:p-10
                   border border-border/50 ${colors.border}
                   transition-all duration-500
                   hover:shadow-xl ${colors.glow}
@@ -128,43 +128,43 @@ const ProjectsSection = () => {
 
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-4">
+                  <div className="flex items-start justify-between mb-6">
                     <div>
-                      <span className={`text-xs font-medium px-2 py-1 rounded-full ${colors.badge}`}>
+                      <span className={`text-sm md:text-base font-medium px-3 py-1.5 rounded-full ${colors.badge}`}>
                         {project.year}
                       </span>
-                      <h3 className="font-display text-2xl font-bold mt-2">
+                      <h3 className="font-display text-3xl md:text-4xl font-bold mt-3">
                         {project.title}
                       </h3>
-                      <p className="text-sm text-muted-foreground">
+                      <p className="text-base md:text-lg text-muted-foreground mt-2">
                         {project.subtitle}
                       </p>
                     </div>
                     <motion.div
-                      className="p-2 rounded-lg bg-muted/50 opacity-0 group-hover:opacity-100 transition-opacity"
+                      className="p-3 rounded-lg bg-muted/50 opacity-0 group-hover:opacity-100 transition-opacity"
                       whileHover={{ scale: 1.1 }}
                     >
-                      <Layers className="w-5 h-5 text-muted-foreground" />
+                      <Layers className="w-6 h-6 md:w-7 md:h-7 text-muted-foreground" />
                     </motion.div>
                   </div>
 
                   {/* Description */}
-                  <p className="text-sm text-muted-foreground mb-4 line-clamp-2">
+                  <p className="text-base md:text-lg text-muted-foreground mb-6 line-clamp-2">
                     {project.description}
                   </p>
 
                   {/* Tech stack */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-3">
                     {project.tech.slice(0, 4).map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs px-2 py-1 rounded-md bg-muted/50 text-muted-foreground"
+                        className="text-sm md:text-base px-3 py-1.5 rounded-md bg-muted/50 text-muted-foreground font-medium"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.tech.length > 4 && (
-                      <span className="text-xs px-2 py-1 rounded-md bg-muted/50 text-muted-foreground">
+                      <span className="text-sm md:text-base px-3 py-1.5 rounded-md bg-muted/50 text-muted-foreground font-medium">
                         +{project.tech.length - 4}
                       </span>
                     )}
@@ -172,7 +172,7 @@ const ProjectsSection = () => {
 
                   {/* View indicator */}
                   <motion.div
-                    className="absolute bottom-6 right-6 text-xs text-muted-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity"
+                    className="absolute bottom-8 right-8 text-sm md:text-base text-muted-foreground/50 opacity-0 group-hover:opacity-100 transition-opacity"
                     initial={{ x: -10 }}
                     whileHover={{ x: 0 }}
                   >

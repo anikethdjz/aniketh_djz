@@ -72,8 +72,8 @@ const AboutSection = () => {
   const [expandedCard, setExpandedCard] = useState<number | null>(null);
 
   return (
-    <section id="about" className="relative py-24 px-4">
-      <div className="max-w-6xl mx-auto">
+    <section id="about" className="relative py-24 px-4 md:px-8 lg:px-12">
+      <div className="w-full">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -81,15 +81,15 @@ const AboutSection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="font-display text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
             About <span className="text-gradient-cyan">Me</span>
           </h2>
-          <p className="text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
             Computer Science Engineer with a passion for building impactful solutions
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {aboutCards.map((card, index) => {
             const colors = colorClasses[card.color as keyof typeof colorClasses];
             const isExpanded = expandedCard === index;
@@ -105,7 +105,7 @@ const AboutSection = () => {
                 onClick={() => setExpandedCard(isExpanded ? null : index)}
                 className={`
                   group relative cursor-pointer
-                  glass rounded-2xl p-6
+                  glass rounded-2xl p-8 md:p-10
                   transition-all duration-500
                   ${colors.bg} ${colors.border}
                   hover:shadow-xl ${colors.glow}
@@ -119,22 +119,22 @@ const AboutSection = () => {
                   rotateY: -2,
                 }}
               >
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-5">
                   <motion.div
-                    className={`p-3 rounded-xl bg-muted/50 ${colors.icon}`}
+                    className={`p-4 rounded-xl bg-muted/50 ${colors.icon}`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <Icon className="w-6 h-6" />
+                    <Icon className="w-7 h-7 md:w-8 md:h-8" />
                   </motion.div>
                   <div className="flex-1">
-                    <p className="text-xs uppercase tracking-wider text-muted-foreground mb-1">
+                    <p className="text-sm md:text-base uppercase tracking-wider text-muted-foreground mb-2">
                       {card.subtitle}
                     </p>
-                    <h3 className="font-display text-xl font-semibold mb-2">
+                    <h3 className="font-display text-2xl md:text-3xl font-semibold mb-3">
                       {card.title}
                     </h3>
-                    <p className="text-foreground font-medium">{card.content}</p>
-                    <p className="text-sm text-muted-foreground mt-1">
+                    <p className="text-base md:text-lg text-foreground font-semibold">{card.content}</p>
+                    <p className="text-base md:text-lg text-muted-foreground mt-2">
                       {card.detail}
                     </p>
                     
@@ -144,7 +144,7 @@ const AboutSection = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-sm text-muted-foreground mt-4 pt-4 border-t border-border">
+                      <p className="text-base md:text-lg text-muted-foreground mt-5 pt-5 border-t border-border">
                         {card.expanded}
                       </p>
                     </motion.div>
@@ -153,7 +153,7 @@ const AboutSection = () => {
 
                 {/* Click indicator */}
                 <motion.div
-                  className="absolute bottom-3 right-3 text-xs text-muted-foreground/50"
+                  className="absolute bottom-4 right-4 text-sm md:text-base text-muted-foreground/50"
                   animate={{ opacity: isExpanded ? 0 : 1 }}
                 >
                   Click to expand
