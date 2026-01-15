@@ -96,7 +96,7 @@ const SkillsSection = () => {
               key={category}
               onClick={() => setActiveFilter(category)}
               className={`
-                px-7 py-3 rounded-full text-base md:text-lg font-semibold transition-all duration-300
+                px-6 py-2.5 rounded-full text-base font-semibold transition-all duration-300
                 ${activeFilter === category 
                   ? 'bg-primary text-primary-foreground glow-cyan' 
                   : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
@@ -130,7 +130,7 @@ const SkillsSection = () => {
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
                 className={`
-                  relative px-7 py-4 md:px-8 md:py-5 rounded-xl cursor-default
+                  relative px-6 py-3.5 md:px-7 md:py-4 rounded-xl cursor-default
                   ${colors.bg} ${colors.border} border
                   transition-all duration-300
                   hover:shadow-lg ${colors.glow}

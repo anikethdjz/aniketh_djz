@@ -105,7 +105,7 @@ const AboutSection = () => {
                 onClick={() => setExpandedCard(isExpanded ? null : index)}
                 className={`
                   group relative cursor-pointer
-                  glass rounded-2xl p-8 md:p-10
+                  glass rounded-2xl p-7 md:p-8
                   transition-all duration-500
                   ${colors.bg} ${colors.border}
                   hover:shadow-xl ${colors.glow}
@@ -121,10 +121,10 @@ const AboutSection = () => {
               >
                 <div className="flex items-start gap-5">
                   <motion.div
-                    className={`p-4 rounded-xl bg-muted/50 ${colors.icon}`}
+                    className={`p-3.5 rounded-xl bg-muted/50 ${colors.icon}`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
                   >
-                    <Icon className="w-7 h-7 md:w-8 md:h-8" />
+                    <Icon className="w-7 h-7" />
                   </motion.div>
                   <div className="flex-1">
                     <p className="text-sm md:text-base uppercase tracking-wider text-muted-foreground mb-2">

@@ -86,7 +86,7 @@ const ExperienceSection = () => {
                     </motion.div>
 
                     <div className="glass px-5 py-4 rounded-lg flex-1 group-hover:border-primary/30 transition-colors">
-                      <span className="text-lg md:text-xl font-semibold">{course}</span>
+                      <span className="text-base md:text-lg font-semibold">{course}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -120,14 +120,14 @@ const ExperienceSection = () => {
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <h4 className="font-semibold text-xl md:text-2xl group-hover:text-accent transition-colors">
+                      <h4 className="font-semibold text-lg md:text-xl group-hover:text-accent transition-colors">
                         {cert.title}
                       </h4>
-                      <p className="text-base md:text-lg text-muted-foreground mt-2">
+                      <p className="text-base text-muted-foreground mt-2">
                         {cert.issuer}
                       </p>
                     </div>
-                    <span className="text-sm md:text-base px-3 py-1.5 rounded-full bg-accent/20 text-accent font-medium">
+                    <span className="text-sm px-3 py-1.5 rounded-full bg-accent/20 text-accent font-medium">
                       {cert.year}
                     </span>
                   </div>
@@ -144,10 +144,10 @@ const ExperienceSection = () => {
               className="mt-8 gradient-border rounded-2xl"
             >
               <div className="glass-strong rounded-2xl p-8 md:p-10">
-                <h4 className="font-display text-2xl md:text-3xl font-semibold mb-4 text-gradient">
+                <h4 className="font-display text-xl md:text-2xl font-semibold mb-4 text-gradient">
                   Hackathon Builder
                 </h4>
-                <p className="text-muted-foreground text-base md:text-lg">
+                <p className="text-muted-foreground text-base">
                   Built 4+ production-grade applications in competitive hackathons including 
                   <span className="text-foreground font-semibold"> Google Solution Challenge 2025</span>, 
                   <span className="text-foreground font-semibold"> Smart India Hackathon 2025</span>, and 

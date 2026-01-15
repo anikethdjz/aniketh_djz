@@ -100,7 +100,7 @@ const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-8">
+            <form onSubmit={handleSubmit} className="space-y-7">
               <div>
                 <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
                   Name
@@ -110,7 +110,7 @@ const ContactSection = () => {
                   required
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full px-6 py-4 text-base md:text-lg rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                  className="w-full px-5 py-3.5 text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
                   placeholder="Your name"
                 />
               </div>
@@ -124,7 +124,7 @@ const ContactSection = () => {
                   required
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full px-6 py-4 text-base md:text-lg rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                  className="w-full px-5 py-3.5 text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
                   placeholder="your@email.com"
                 />
               </div>
@@ -138,7 +138,7 @@ const ContactSection = () => {
                   rows={5}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full px-6 py-4 text-base md:text-lg rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent resize-none"
+                  className="w-full px-5 py-3.5 text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent resize-none"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
@@ -147,7 +147,7 @@ const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
                 className={`
-                  w-full py-5 md:py-6 rounded-xl font-semibold text-base md:text-lg flex items-center justify-center gap-3
+                  w-full py-4 md:py-5 rounded-xl font-semibold text-base flex items-center justify-center gap-3
                   transition-all duration-300
                   ${isSubmitted 
                     ? 'bg-accent text-accent-foreground' 
@@ -160,18 +160,18 @@ const ContactSection = () => {
               >
                 {isSubmitted ? (
                   <>
-                    <CheckCircle className="w-6 h-6 md:w-7 md:h-7" />
+                    <CheckCircle className="w-6 h-6" />
                     Message Sent!
                   </>
                 ) : isSubmitting ? (
                   <motion.div
                     animate={{ rotate: 360 }}
                     transition={{ duration: 1, repeat: Infinity, ease: 'linear' }}
-                    className="w-6 h-6 md:w-7 md:h-7 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
+                    className="w-6 h-6 border-2 border-primary-foreground/30 border-t-primary-foreground rounded-full"
                   />
                 ) : (
                   <>
-                    <Send className="w-6 h-6 md:w-7 md:h-7" />
+                    <Send className="w-6 h-6" />
                     Send Message
                   </>
                 )}
@@ -198,28 +198,28 @@ const ContactSection = () => {
             transition={{ duration: 0.6 }}
             className="flex flex-col justify-center"
           >
-            <div className="glass rounded-2xl p-10 md:p-12">
-              <h3 className="font-display text-3xl md:text-4xl font-semibold mb-8">
+            <div className="glass rounded-2xl p-9 md:p-10">
+              <h3 className="font-display text-2xl md:text-3xl font-semibold mb-8">
                 Get in Touch
               </h3>
 
               <div className="space-y-6 mb-10">
                 <div className="flex items-center gap-4 text-muted-foreground">
-                  <Mail className="w-6 h-6 md:w-7 md:h-7 text-primary" />
-                  <a href="mailto:anikethsshaji@gmail.com" className="text-base md:text-lg hover:text-foreground transition-colors">
+                  <Mail className="w-6 h-6 text-primary" />
+                  <a href="mailto:anikethsshaji@gmail.com" className="text-base hover:text-foreground transition-colors">
                     anikethsshaji@gmail.com
                   </a>
                 </div>
                 <div className="flex items-center gap-4 text-muted-foreground">
-                  <Phone className="w-6 h-6 md:w-7 md:h-7 text-primary" />
-                  <a href="tel:+919447073475" className="text-base md:text-lg hover:text-foreground transition-colors">
+                  <Phone className="w-6 h-6 text-primary" />
+                  <a href="tel:+919447073475" className="text-base hover:text-foreground transition-colors">
                     +91 9447073475
                   </a>
                 </div>
               </div>
 
               <div className="border-t border-border pt-8">
-                <p className="text-base md:text-lg text-muted-foreground mb-6 font-medium">
+                <p className="text-base text-muted-foreground mb-6 font-medium">
                   Connect with me
                 </p>
                 <div className="flex gap-4">
@@ -231,11 +231,11 @@ const ContactSection = () => {
                         href={link.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={`p-4 md:p-5 rounded-xl bg-muted/50 text-muted-foreground ${link.color} transition-all duration-300 hover:bg-muted`}
+                        className={`p-4 rounded-xl bg-muted/50 text-muted-foreground ${link.color} transition-all duration-300 hover:bg-muted`}
                         whileHover={{ scale: 1.1, y: -2 }}
                         whileTap={{ scale: 0.95 }}
                       >
-                        <Icon className="w-6 h-6 md:w-7 md:h-7" />
+                        <Icon className="w-6 h-6" />
                       </motion.a>
                     );
                   })}
@@ -249,7 +249,7 @@ const ContactSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
-              className="mt-8 text-center text-base md:text-lg text-muted-foreground"
+              className="mt-8 text-center text-base text-muted-foreground"
             >
               📍 Palakkad, Kerala, India • Open to remote opportunities
             </motion.div>

@@ -112,7 +112,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="text-2xl md:text-3xl lg:text-4xl text-muted-foreground max-w-4xl mx-auto mb-12 text-center"
+          className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto mb-10 text-center"
         >
           I build{' '}
           <span className="text-primary font-semibold">production-grade full-stack & AI systems</span>
@@ -169,7 +169,7 @@ interface MagneticButtonProps {
 }
 
 const MagneticButton = ({ children, href, variant, download }: MagneticButtonProps) => {
-  const baseClasses = "relative inline-flex items-center px-8 py-4 rounded-lg font-semibold text-base md:text-lg transition-all duration-300 group overflow-hidden";
+  const baseClasses = "relative inline-flex items-center px-7 py-3.5 rounded-lg font-semibold text-base transition-all duration-300 group overflow-hidden";
   
   const variants = {
     primary: "bg-primary text-primary-foreground hover:shadow-lg hover:shadow-primary/30 glow-cyan",

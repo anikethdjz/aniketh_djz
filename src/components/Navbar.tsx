@@ -39,7 +39,7 @@ const Navbar = () => {
           {/* Logo */}
           <motion.a
             href="#"
-            className="font-display text-3xl md:text-4xl font-bold text-gradient-cyan"
+            className="font-display text-2xl md:text-3xl font-bold text-gradient-cyan"
             whileHover={{ scale: 1.05 }}
           >
             AS
@@ -51,7 +51,7 @@ const Navbar = () => {
               <motion.a
                 key={link.name}
                 href={link.href}
-                className="px-6 py-3 text-base md:text-lg font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
+                className="px-5 py-2.5 text-base font-medium text-muted-foreground hover:text-foreground transition-colors relative group"
                 whileHover={{ scale: 1.05 }}
               >
                 {link.name}
