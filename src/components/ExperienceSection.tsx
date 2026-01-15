@@ -38,12 +38,12 @@ const ExperienceSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Learning <span className="text-gradient-cyan">Journey</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Building a strong foundation through coursework and continuous learning
           </p>
         </motion.div>
@@ -56,11 +56,11 @@ const ExperienceSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="p-3 rounded-lg bg-primary/20">
-                <BookOpen className="w-7 h-7 md:w-8 md:h-8 text-primary" />
+                <BookOpen className="w-6 h-6 md:w-8 md:h-8 text-primary" />
               </div>
-              <h3 className="font-display text-3xl md:text-4xl font-semibold">Technical Coursework</h3>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">Technical Coursework</h3>
             </div>
 
             <div className="relative">
@@ -86,7 +86,7 @@ const ExperienceSection = () => {
                     </motion.div>
 
                     <div className="glass px-5 py-4 rounded-lg flex-1 group-hover:border-primary/30 transition-colors">
-                      <span className="text-base md:text-lg font-semibold">{course}</span>
+                      <span className="text-sm sm:text-base md:text-lg font-semibold">{course}</span>
                     </div>
                   </motion.div>
                 ))}
@@ -101,11 +101,11 @@ const ExperienceSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <div className="flex items-center gap-4 mb-8">
+            <div className="flex items-center gap-3 md:gap-4 mb-6 md:mb-8">
               <div className="p-3 rounded-lg bg-accent/20">
-                <Award className="w-7 h-7 md:w-8 md:h-8 text-accent" />
+                <Award className="w-6 h-6 md:w-8 md:h-8 text-accent" />
               </div>
-              <h3 className="font-display text-3xl md:text-4xl font-semibold">Certifications</h3>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold">Certifications</h3>
             </div>
 
             <div className="space-y-4">
@@ -116,18 +116,18 @@ const ExperienceSection = () => {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ duration: 0.4, delay: index * 0.1 }}
-                  className="glass rounded-xl p-7 md:p-8 hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group"
+                  className="glass rounded-xl p-6 md:p-8 hover:border-accent/30 transition-all duration-300 hover:-translate-y-1 group"
                 >
                   <div className="flex items-start justify-between">
                     <div>
-                      <h4 className="font-semibold text-lg md:text-xl group-hover:text-accent transition-colors">
+                      <h4 className="font-semibold text-base sm:text-lg md:text-xl group-hover:text-accent transition-colors">
                         {cert.title}
                       </h4>
-                      <p className="text-base text-muted-foreground mt-2">
+                      <p className="text-sm sm:text-base text-muted-foreground mt-2">
                         {cert.issuer}
                       </p>
                     </div>
-                    <span className="text-sm px-3 py-1.5 rounded-full bg-accent/20 text-accent font-medium">
+                  <span className="text-xs sm:text-sm px-3 py-1.5 rounded-full bg-accent/20 text-accent font-medium">
                       {cert.year}
                     </span>
                   </div>
@@ -143,8 +143,8 @@ const ExperienceSection = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               className="mt-8 gradient-border rounded-2xl"
             >
-              <div className="glass-strong rounded-2xl p-8 md:p-10">
-                <h4 className="font-display text-xl md:text-2xl font-semibold mb-4 text-gradient">
+              <div className="glass-strong rounded-2xl p-6 md:p-10">
+                <h4 className="font-display text-lg sm:text-xl md:text-2xl font-semibold mb-4 text-gradient">
                   Hackathon Builder
                 </h4>
                 <p className="text-muted-foreground text-base">

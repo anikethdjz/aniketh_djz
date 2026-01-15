@@ -43,7 +43,7 @@ const HeroSection = () => {
   const nameLetters = 'Aniketh S'.split('');
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-4 md:px-8 lg:px-12 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center px-4 pt-24 sm:pt-28 md:pt-32 md:px-8 lg:px-12 overflow-hidden">
       {/* Gradient orbs */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[128px] animate-pulse-glow" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-secondary/20 rounded-full blur-[128px] animate-pulse-glow" />
@@ -54,7 +54,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
-          className="relative w-32 h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto mb-8"
+          className="relative w-28 h-28 sm:w-32 sm:h-32 md:w-48 md:h-48 lg:w-56 lg:h-56 mx-auto mb-8"
         >
           <div className="absolute inset-0 rounded-full bg-gradient-to-r from-primary via-secondary to-accent blur-xl opacity-60 animate-pulse-glow" />
           <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/50 shadow-lg shadow-primary/30">
@@ -71,7 +71,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="font-display text-5xl md:text-7xl lg:text-8xl font-bold mb-6"
+          className="font-display text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-6"
         >
           <span className="inline-flex">
             {nameLetters.map((letter, index) => (
@@ -99,9 +99,9 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.8 }}
-          className="h-12 md:h-16 mb-8"
+          className="h-10 sm:h-12 md:h-16 mb-8"
         >
-          <span className="font-display text-xl md:text-3xl text-muted-foreground">
+          <span className="font-display text-lg sm:text-xl md:text-3xl text-muted-foreground">
             {displayText}
             <span className="animate-pulse text-primary">|</span>
           </span>
@@ -112,7 +112,7 @@ const HeroSection = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1 }}
-          className="text-xl md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto mb-10 text-center"
+          className="text-base sm:text-lg md:text-2xl lg:text-3xl text-muted-foreground max-w-4xl mx-auto mb-10 text-center"
         >
           I build{' '}
           <span className="text-primary font-semibold">production-grade full-stack & AI systems</span>

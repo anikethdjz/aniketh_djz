@@ -82,17 +82,17 @@ const ContactSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Let's <span className="text-gradient">Connect</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-xl mx-auto">
             Let's build something impactful together.
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 gap-14 max-w-4xl mx-auto">
+        <div className="grid grid-cols-1 gap-10 md:gap-14 max-w-4xl mx-auto">
           {/* Contact form */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -100,9 +100,9 @@ const ContactSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <form onSubmit={handleSubmit} className="space-y-7">
+            <form onSubmit={handleSubmit} className="space-y-6 md:space-y-7">
               <div>
-                <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
+                <label className="text-sm sm:text-base md:text-lg text-muted-foreground mb-2 md:mb-3 block font-medium">
                   Name
                 </label>
                 <input
@@ -110,13 +110,13 @@ const ContactSection = () => {
                   required
                   value={formState.name}
                   onChange={(e) => setFormState({ ...formState, name: e.target.value })}
-                  className="w-full px-5 py-3.5 text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                  className="w-full px-4 py-3 text-sm sm:text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
                   placeholder="Your name"
                 />
               </div>
 
               <div>
-                <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
+                <label className="text-sm sm:text-base md:text-lg text-muted-foreground mb-2 md:mb-3 block font-medium">
                   Email
                 </label>
                 <input
@@ -124,13 +124,13 @@ const ContactSection = () => {
                   required
                   value={formState.email}
                   onChange={(e) => setFormState({ ...formState, email: e.target.value })}
-                  className="w-full px-5 py-3.5 text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
+                  className="w-full px-4 py-3 text-sm sm:text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent"
                   placeholder="your@email.com"
                 />
               </div>
 
               <div>
-                <label className="text-base md:text-lg text-muted-foreground mb-3 block font-medium">
+                <label className="text-sm sm:text-base md:text-lg text-muted-foreground mb-2 md:mb-3 block font-medium">
                   Message
                 </label>
                 <textarea
@@ -138,7 +138,7 @@ const ContactSection = () => {
                   rows={5}
                   value={formState.message}
                   onChange={(e) => setFormState({ ...formState, message: e.target.value })}
-                  className="w-full px-5 py-3.5 text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent resize-none"
+                  className="w-full px-4 py-3 text-sm sm:text-base rounded-xl glass border border-border/50 focus:border-primary/50 focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all bg-transparent resize-none"
                   placeholder="Tell me about your project or opportunity..."
                 />
               </div>
@@ -147,7 +147,7 @@ const ContactSection = () => {
                 type="submit"
                 disabled={isSubmitting || isSubmitted}
                 className={`
-                  w-full py-4 md:py-5 rounded-xl font-semibold text-base flex items-center justify-center gap-3
+                  w-full py-3.5 sm:py-4 md:py-5 rounded-xl font-semibold text-sm sm:text-base flex items-center justify-center gap-3
                   transition-all duration-300
                   ${isSubmitted 
                     ? 'bg-accent text-accent-foreground' 

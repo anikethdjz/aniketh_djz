@@ -79,12 +79,12 @@ const AboutSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             About <span className="text-gradient-cyan">Me</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Computer Science Engineer with a passion for building impactful solutions
           </p>
         </motion.div>
@@ -105,7 +105,7 @@ const AboutSection = () => {
                 onClick={() => setExpandedCard(isExpanded ? null : index)}
                 className={`
                   group relative cursor-pointer
-                  glass rounded-2xl p-7 md:p-8
+                  glass rounded-2xl p-6 md:p-8
                   transition-all duration-500
                   ${colors.bg} ${colors.border}
                   hover:shadow-xl ${colors.glow}
@@ -119,7 +119,7 @@ const AboutSection = () => {
                   rotateY: -2,
                 }}
               >
-                <div className="flex items-start gap-5">
+                <div className="flex flex-col sm:flex-row items-start gap-4 md:gap-5">
                   <motion.div
                     className={`p-3.5 rounded-xl bg-muted/50 ${colors.icon}`}
                     whileHover={{ scale: 1.1, rotate: 5 }}
@@ -127,14 +127,14 @@ const AboutSection = () => {
                     <Icon className="w-7 h-7" />
                   </motion.div>
                   <div className="flex-1">
-                    <p className="text-sm md:text-base uppercase tracking-wider text-muted-foreground mb-2">
+                    <p className="text-xs sm:text-sm md:text-base uppercase tracking-wider text-muted-foreground mb-2">
                       {card.subtitle}
                     </p>
-                    <h3 className="font-display text-2xl md:text-3xl font-semibold mb-3">
+                    <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-3">
                       {card.title}
                     </h3>
-                    <p className="text-base md:text-lg text-foreground font-semibold">{card.content}</p>
-                    <p className="text-base md:text-lg text-muted-foreground mt-2">
+                    <p className="text-sm sm:text-base md:text-lg text-foreground font-semibold">{card.content}</p>
+                    <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-2">
                       {card.detail}
                     </p>
                     
@@ -144,7 +144,7 @@ const AboutSection = () => {
                       transition={{ duration: 0.3 }}
                       className="overflow-hidden"
                     >
-                      <p className="text-base md:text-lg text-muted-foreground mt-5 pt-5 border-t border-border">
+                      <p className="text-sm sm:text-base md:text-lg text-muted-foreground mt-5 pt-5 border-t border-border">
                         {card.expanded}
                       </p>
                     </motion.div>

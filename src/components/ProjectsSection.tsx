@@ -91,17 +91,17 @@ const ProjectsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
         >
-          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Featured <span className="text-gradient">Projects</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Production-grade applications built for hackathons and real-world impact
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 max-w-7xl mx-auto">
           {projects.map((project, index) => {
             const colors = colorVariants[project.color as keyof typeof colorVariants];
 
@@ -128,15 +128,15 @@ const ProjectsSection = () => {
 
                 <div className="relative z-10">
                   {/* Header */}
-                  <div className="flex items-start justify-between mb-5">
+                  <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between mb-5">
                     <div>
                       <span className={`text-sm font-medium px-3 py-1.5 rounded-full ${colors.badge}`}>
                         {project.year}
                       </span>
-                      <h3 className="font-display text-2xl md:text-3xl font-bold mt-3">
+                      <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-bold mt-3">
                         {project.title}
                       </h3>
-                      <p className="text-base text-muted-foreground mt-2">
+                      <p className="text-sm sm:text-base text-muted-foreground mt-2">
                         {project.subtitle}
                       </p>
                     </div>

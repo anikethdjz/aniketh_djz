@@ -73,12 +73,12 @@ const SkillsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-12"
+          className="text-center mb-10 md:mb-12"
         >
-          <h2 className="font-display text-5xl md:text-6xl font-bold mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
             Tech <span className="text-gradient">Arsenal</span>
           </h2>
-          <p className="text-muted-foreground text-lg md:text-xl max-w-3xl mx-auto">
+          <p className="text-muted-foreground text-base sm:text-lg md:text-xl max-w-3xl mx-auto">
             Tools and technologies I wield to build production-grade systems
           </p>
         </motion.div>
@@ -89,19 +89,19 @@ const SkillsSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="flex justify-center gap-3 mb-12 flex-wrap"
+          className="flex justify-center gap-2 sm:gap-3 mb-10 md:mb-12 flex-wrap"
         >
           {(Object.keys(skillCategories) as Array<keyof typeof skillCategories>).map((category) => (
             <motion.button
               key={category}
               onClick={() => setActiveFilter(category)}
-              className={`
-                px-6 py-2.5 rounded-full text-base font-semibold transition-all duration-300
-                ${activeFilter === category 
-                  ? 'bg-primary text-primary-foreground glow-cyan' 
-                  : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
-                }
-              `}
+                className={`
+                  px-4 py-2 sm:px-6 sm:py-2.5 rounded-full text-sm sm:text-base font-semibold transition-all duration-300
+                  ${activeFilter === category 
+                    ? 'bg-primary text-primary-foreground glow-cyan' 
+                    : 'bg-muted/50 text-muted-foreground hover:bg-muted hover:text-foreground'
+                  }
+                `}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
@@ -113,7 +113,7 @@ const SkillsSection = () => {
         {/* Skills grid */}
         <motion.div
           layout
-          className="flex flex-wrap justify-center gap-4 max-w-6xl mx-auto"
+          className="flex flex-wrap justify-center gap-3 sm:gap-4 max-w-6xl mx-auto"
         >
           {filteredSkills.map((skill, index) => {
             const colors = colorVariants[skill.color as keyof typeof colorVariants];
@@ -130,7 +130,7 @@ const SkillsSection = () => {
                 onMouseEnter={() => setHoveredSkill(skill.name)}
                 onMouseLeave={() => setHoveredSkill(null)}
                 className={`
-                  relative px-6 py-3.5 md:px-7 md:py-4 rounded-xl cursor-default
+                  relative px-4 py-3 sm:px-6 sm:py-3.5 md:px-7 md:py-4 rounded-xl cursor-default
                   ${colors.bg} ${colors.border} border
                   transition-all duration-300
                   hover:shadow-lg ${colors.glow}
@@ -141,7 +141,7 @@ const SkillsSection = () => {
                   animationDelay: `${index * 0.1}s`,
                 }}
               >
-                <span className={`font-semibold text-base md:text-lg ${colors.text}`}>
+                <span className={`font-semibold text-sm sm:text-base md:text-lg ${colors.text}`}>
                   {skill.name}
                 </span>
 
